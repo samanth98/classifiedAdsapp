@@ -1,0 +1,205 @@
+<!Doctype html>
+
+<html>
+
+<head>
+    <title>Details</title>
+</head>
+
+<body>
+    <h1>Full Details</h1>
+    <button class="btnAction" id="home" onclick="window.location.href = '/guest/viewallads';">
+        Back
+    </button>
+
+
+    <div class="card">
+        <p style="font-weight: 500;">This Ad is posted by - </p>
+        <p><strong>NAME: </strong>
+            <%=memberData.name%>
+        </p>
+        <p><strong>EMAIL: </strong>
+            <%=memberData.email%>
+        </p>
+      
+        <p><strong>MOBILE: </strong>
+            <%=memberData.mobile%>
+        </p>
+   
+        <p><strong>ADDRESS: </strong>
+            <%=memberData.address%>
+        </p>
+       
+        <p><button class="btnContact" onclick="window.location.href = '/guest/contactMember/<%=memberData._id%>/';">CONTACT</button>
+        </p>
+    </div>
+
+
+    <table style="background-color: aqua;">
+        <thead>
+            <tr>
+                <th>Image </th>
+                <th>Title </th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Time Created</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <% var imgUrl = "/media/"+adData._id+"."+adData.image%>
+                <td>
+                    <img src=<%=imgUrl%>>
+                </td>
+                <td>
+                    <%=adData.name%>
+                </td>
+                <td>
+                    <%=adData.description%>
+                </td>
+                <td>
+                    <%=adData.price%>
+                </td>
+                <td>
+                    <% var dObj=new Date(adData.createdDateTime) 
+                    var date=dObj.getDate()+"/"+(dObj.getMonth()+1)+"/"+dObj.getFullYear()+" "+ dObj.getHours()+":"+dObj.getMinutes()+":"+dObj.getSeconds() %>
+                        <%=date%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+<style>
+    html,body{overflow-y: scroll; }
+    img{
+        width: 194px;
+        height: 125px;
+        margin-left: -57px
+    }
+    html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, #33ccff 0%, #66ccff 100%);
+        font-family: 'Open Sans', sans-serif;
+ 
+    }
+
+    h1 {
+        background: transparent;
+        font-family: -webkit-pictograph;
+        text-align: center;
+        height: 50px;
+        width: 100%;
+ 
+    }
+
+    h2 {
+        background-color: crimson;
+        text-align: center;
+        color: white;
+        height: 50px;
+        margin: 0px 0px 0px 0px;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+
+    td {
+        border: 1px solid black;
+        height: 40px;
+        padding-left: 60px;
+        font-weight: 700;
+    }
+
+    th {
+        border: 1px solid black;
+        height: 40px;
+        background-color: darkgray;
+    }
+
+    tbody tr {
+        background-color: #f2f2f2;
+        height: 60px;
+    }
+
+    div .num {
+        display: inline-block;
+        background-color: aliceblue;
+        width: 32%;
+        height: 80px;
+        font-size: 25px;
+        font-weight: 900;
+        border: solid 8px powderblue;
+        margin-top: -23px;
+
+    }
+
+    p {
+        margin-left: 70px;
+    }    
+
+    .btnAction {
+        background-color: lawngreen;
+        border: none;
+        color: white;
+        padding: 15px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 13px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+    
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        margin: auto;
+        background-color: transparent;
+    }
+
+    #home {
+        float:right;
+        margin-top: -73px;
+        height: 41px;
+        border-radius: 35px;
+        background-color: powderblue;
+        font-weight: 700;
+        width: 202px;
+        margin-left: 10px;
+        color: black;
+    }
+
+    .btnContact {
+        background-color:lawngreen;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 12px;
+        width: 312px;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 70%;
+        margin-bottom: 8px;
+
+    }
+</style>
+
+</html>

@@ -1,0 +1,164 @@
+<!Doctype html>
+
+<html>
+
+<head>
+    <title>List of products</title>
+</head>
+
+<body>    
+    <h1>List of all Ads</h1>    
+    <button class="btnAction" id="home" onclick="window.location.href = '/guest';">
+    Back to Home Page
+    </button> 
+   
+    <table>
+        <thead>
+            <tr>
+                <th> page</th>
+                <th>Title </th>
+                <th>Description</th>
+                <th>Time Created</th>                
+                <th>Actions</th>                                     
+            </tr>
+        </thead>
+        <tbody>
+            <% if(taskData.length> 0 )
+                {
+                taskData.forEach(function (data){
+                %>
+                <tr>
+                    <% var imgUrl = "/media/"+data._id+"."+data.image%>
+                    <td>
+                        <img src="<%=imgUrl%>">
+                    </td>
+                    <td>
+                        <%=data.name%>
+                    </td>
+                    <td>
+                        <%=data.description%>
+                    </td>
+
+                    <td>
+                        <% var dObj=new Date(data.createdDateTime) 
+                        var date=dObj.getDate()+"/"+(dObj.getMonth()+1)+"/"+dObj.getFullYear()+" "+ dObj.getHours()+":"+dObj.getMinutes()+":"+dObj.getSeconds() %>
+                            <%=date%>
+                    </td>
+                    <td>                        
+                        <button class="btnAction" onclick="window.location.href = '/guest/viewFullDetails/<%=data._id%>';">
+                            View Full Details
+                        </button>
+                    </td>
+                </tr>
+                <% }) } %>
+        </tbody>
+    </table>
+
+</body>
+<style>
+    html,body{overflow-y: scroll; }
+    img{
+        width: 194px;
+        height: 125px;
+        margin-left: -57px
+    }
+    html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        background: linear-gradient(to bottom, #33ccff 0%, #66ccff 56%); }
+    h1 {
+        background: transparent;
+        font-family: -webkit-pictograph;
+        text-align: center;
+        height: 50px;
+        width : 100%;
+     
+    }
+    h2 {
+        background-color: crimson;
+        text-align: center;
+        color: white;
+        height: 50px;
+        margin: 0px 0px 0px 0px;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+
+    td {
+        border: 1px solid black;
+        height: 40px;
+        padding-left: 60px;
+        font-weight: 700;
+    }
+
+    th {
+        border: 1px solid black;
+        height: 40px;
+        background-color: darkgray;
+    }
+
+    tbody tr {
+        background-color: #f2f2f2;
+        height: 60px;
+    }
+    div .num {
+        display: inline-block;
+        background-color: aliceblue;
+        width: 32%;
+        height: 80px;
+        font-size: 25px;
+        font-weight: 900;
+        border: solid 8px powderblue;
+        margin-top: -23px;
+
+    }
+    p{
+        margin-left: 70px;
+    }
+    #falseRow {
+        background-color: #f69494;
+    }
+
+    #trueRow {
+        background-color: #9cfaa1;
+    }
+    .btnAction {
+        background-color: lawngreen;
+        border: none;
+        color: white;
+        padding: 15px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 13px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+    #home {
+        float: right;
+        margin-top: -73px;
+        height: 41px;
+        border-radius: 35px;
+        background-color: transparent;
+        font-weight: 700;
+        width: 202px;
+        margin-left: 10px;
+        color: black;
+    }
+</style>
+
+</html>

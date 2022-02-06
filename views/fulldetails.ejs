@@ -1,0 +1,178 @@
+<!Doctype html>
+
+<html>
+
+<head>
+    <title>Details</title>
+</head>
+
+<body>    
+    <h1>Full Details</h1>
+    <button class="btnAction" id="home" onclick="window.location.href = '/admin/index';">
+        Back to Home Page
+    </button>    
+    
+    
+    <div class="card">
+        <p style="font-weight: bold;">SELLER PERSONAL INFORMATION</p> 
+        <% if(memberData.length> 0 )
+                {
+                    memberData.forEach(function (data){
+                %>      
+        <p><strong>First NAME: </strong><%=data.fname%></p>
+        <p><strong>Last NAME: </strong><%=data.lname%></p>
+        <p><strong>EMAIL: </strong><%=data.email%></p>
+       
+        <p><strong>MOBILE: </strong><%=data.mobile%></p>
+      
+        <p><strong>ADDRESS: </strong><%=data.address%></p>
+     
+        
+        <% }) } %>
+      </div>
+
+
+    <table style="background-color: aqua;">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title </th>
+                <th>Description</th>
+                <th>Price</th>                                      
+            </tr>
+        </thead>
+        <tbody>
+            <% if(adData.length> 0 )
+                {
+                    adData.forEach(function (data){
+                %>
+                <tr>
+                    <% var imgUrl = "/media/"+data._id+"."+data.image%>
+                    <td>
+                        <img src="<%=imgUrl%>">
+                    </td>                
+                    <td>
+                        <%=data.name%>
+                    </td>
+                    <td>
+                        <%=data.description%>
+                    </td>
+                    <td>
+                        <%=data.price%>
+                    </td>                    
+                </tr>
+                <% }) } %>
+        </tbody>
+    </table>
+</body>
+<style>
+    html,body{overflow-y: scroll; }
+    img{
+        width: 194px;
+        height: 125px;
+        margin-left: -57px
+    }
+    html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        background: linear-gradient(to bottom, #33ccff 0%, #66ccff 100%);
+  }
+    h1 {
+        background: transparent;
+        font-family: -webkit-pictograph;
+        text-align: center;
+        height: 50px;
+        width : 100%;
+       
+    }
+    h2 {
+        background-color: crimson;
+        text-align: center;
+        color: white;
+        height: 50px;
+        margin: 0px 0px 0px 0px;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+
+    td {
+        border: 1px solid black;
+        height: 40px;
+        padding-left: 60px;
+        font-weight: 700;
+    }
+
+    th {
+        border: 1px solid black;
+        height: 40px;
+        background-color: darkgray;
+    }
+
+    tbody tr {
+        background-color: #f2f2f2;
+        height: 60px;
+    }
+    div .num {
+        display: inline-block;
+        background-color: aliceblue;
+        width: 32%;
+        height: 80px;
+        font-size: 25px;
+        font-weight: 900;
+        border: solid 8px powderblue;
+        margin-top: -23px;
+
+    }
+    p{
+        margin-left: 70px;
+    }    
+    .btnAction {
+        background-color: transparent;
+        border: none;
+        color: white;
+        padding: 15px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 13px;
+        cursor: pointer;
+        border-radius: 50px;
+    }    
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        margin: auto;        
+        background-color: transparent;
+        box-shadow: #f2f2f2;
+        border: black;
+    }
+    #home {
+        float: right;
+        margin-top: -73px;
+        height: 41px;
+        border-radius: 35px;
+        background-color: transparent;
+        font-weight: 700;
+        width: 202px;
+        margin-left: 10px;
+        color: black;
+    }
+
+    
+</style>
+
+</html>

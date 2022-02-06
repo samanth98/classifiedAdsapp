@@ -1,0 +1,110 @@
+<!Doctype html>
+
+<html>
+
+<head>  
+  <title>Re-upload Image</title>
+</head>
+
+<body>
+  <form action="/user/reuploadImg" method="POST" enctype="multipart/form-data">
+    <div class="login">
+      <h1>Update Image</h1>
+      <input type="hidden" name="id" value="<%=data._id%>" required="required" />
+      <input type="file" name="filetoupload" placeholder="Upload File" required="required" /> 
+      <button class="btnRegister" type="submit">Update Ad</button>  
+  </div>
+  </form>
+</body>
+<style>
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+       background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3E1D6D', endColorstr='#092756', GradientType=1);
+  }
+
+  .login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    width: 300px;
+    height: 300px;
+  }
+  label{
+    opacity: 70%;
+    width: 100%;
+  }
+
+  .login h1 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .index h1 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+  }
+
+  .index a {
+    color: blue;
+    background: white;
+    font-size: 18px
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+    -webkit-transition: box-shadow .5s ease;
+    -moz-transition: box-shadow .5s ease;
+    -o-transition: box-shadow .5s ease;
+    -ms-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease;
+  }
+
+  input:focus {
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .btnRegister {
+    background-color: #6eb6de;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 13px;
+    width: 322px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  label {
+    color: white;
+  }
+</style>
+
+</html>

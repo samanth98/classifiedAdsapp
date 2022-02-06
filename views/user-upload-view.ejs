@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title> <%= title %> </title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+
+    <body>
+        <center>
+            <%= title %>
+        </center>
+        <center>
+            <form class="form" action="/user/uploadaction" method="post" enctype="multipart/form-data">
+                <div>
+                    <label> Name </label>
+                    <input type="text" name="name" required />
+                </div>
+                <div>
+                    <label> Description </label>
+                    <input type="text" name="description" required />
+                </div>
+                <div>
+                  <label> Price </label>
+                  <input type="number" name="price" required />
+             
+                </div>
+                <div>
+                    <label for="file"> File </label>
+                    <input type="file" name="adimage" required />
+                </div>
+                <div>
+                    <button type="submit"> Create Ad </button>
+                </div>
+            </form>
+            
+        </center>
+  
+
+    </body>
+   
+    <style>
+        
+        
+        * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+        
+        html { width: 100%; height:100%; overflow:hidden; }
+        
+        body {
+          background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+	        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	        font-weight:300;
+	        text-align: left;
+	        text-decoration: none;
+	        height: 500px; 
+
+
+     /*  
+          background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+            background: linear-gradient(to bottom right, #33cccc 0%, #ff6600 100%);  width: 100%;
+          height:100%;
+          font-family: 'Open Sans', sans-serif;
+     
+          
+             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://static.vecteezy.com/system/resources/previews/002/860/312/non_2x/abstract-blurred-gradiant-mesh-background-in-violet-pink-blue-dark-blue-pastel-colors-vector.jpg);
+         box-shadow: 5px 10px #363305;
+         linear-gradient(to bottom, #33cccc 0%, #ff9933 100%);
+          */
+        }
+        .form{
+            border-radius: 25px;
+            display: inline-block; 
+            text-align: center;
+           
+            width: auto;
+            height: auto;
+            background:transparent;
+            border: 1px solid;
+          padding: 5px;
+          box-shadow: 10px 10px 5px #363305;
+         
+        }
+        div{
+            
+            padding: 5px;
+        }
+        a:link, a:visited {
+            font-size:large;
+            margin: 20px 10px;
+         border-radius: 25px;
+         background: transparent;
+        
+          color: white;
+          padding: 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color: rgb(102, 228, 140);
+        }
+
+          button {
+            font-size:large;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background-color: #36f436;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  input {   
+        width: 50%;   
+        margin: 8px 0;  
+        padding: 10px 20px;   
+        display: inline-block;   
+        border: 2px solid rgb(58, 128, 0);   
+        box-sizing: border-box;   
+    } 
+
+
+    </style>
+
+
+</html>

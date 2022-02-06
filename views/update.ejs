@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title> <%=title %> </title>
+    </head>
+
+    <body>
+        <center>
+
+        <form class="form" action="/user/updateuser" method="post">
+            <div class="mb-3">
+                <label>User ID</label>
+                <input type="text" class="form-control" id="id" name="id" value="<%=userdata._id %>" readonly required>
+              </div>
+            <div>
+                <label> First Name </label>
+                <input type="name" name="fname" value="<%=userdata.fname %>" required />
+            </div>
+            <div>
+                <label> Last Name </label>
+                <input type="name" name="lname" value="<%=userdata.lname %>" required />
+            </div>
+            <div>
+                <label>mobile number </label>
+                <input type="nickname" name="mobile" value="<%=userdata.mobile %>"  required />
+            </div>
+            <div>
+                <label> Email Address </label>
+                <input type="email" name="email"value="<%=userdata.email %>" required />
+            </div>
+            <div class="input_field select_option">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <label> Address</label>
+                  <input type="address" name="address" placeholder="address"  value="<%=userdata.address %>"  required />
+                </div>
+                <div class="select_arrow"></div>
+              </div>
+
+              <div class="input_field select_option">
+                <select  name="option" id="option">
+                  <option>Select Gender </option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="select_arrow"></div>
+              </div>
+              <div>
+                <label> Password </label>
+                <input type="password" name="password"value="<%=userdata.password %>" required />
+            </div>
+       
+            <div>
+                <button type="submit"> Update </button>
+            </div>
+            <div>
+                <a href="/user/"> Already a Registed User </a>
+          
+                <a href="/user/forgot" class="">forgot Password</a>
+            </div>
+        </form>
+    </center>
+    </body>
+
+    <style>
+        
+        
+        * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+        
+        html { width: 100%; height:100%; overflow:hidden; }
+        
+        body {
+          background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+	        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	        font-weight:300;
+	        text-align: left;
+	        text-decoration: none;
+	        height: 500px; 
+
+
+     /*  
+          background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+            background: linear-gradient(to bottom right, #33cccc 0%, #ff6600 100%);  width: 100%;
+          height:100%;
+          font-family: 'Open Sans', sans-serif;
+     
+          
+             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://static.vecteezy.com/system/resources/previews/002/860/312/non_2x/abstract-blurred-gradiant-mesh-background-in-violet-pink-blue-dark-blue-pastel-colors-vector.jpg);
+         box-shadow: 5px 10px #363305;
+         linear-gradient(to bottom, #33cccc 0%, #ff9933 100%);
+          */
+        }
+        .form{
+            border-radius: 25px;
+            display: inline-block; 
+            text-align: center;
+           
+            width: auto;
+            height: auto;
+            background:transparent;
+            border: 1px solid;
+          padding: 5px;
+          box-shadow: 10px 10px 5px #363305;
+         
+        }
+        div{
+            
+            padding: 5px;
+        }
+        a:link, a:visited {
+            font-size:large;
+            margin: 20px 10px;
+         border-radius: 25px;
+         background: transparent;
+        
+          color: white;
+          padding: 5px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color: rgb(102, 228, 140);
+        }
+
+          button {
+            font-size:large;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background-color: #36f436;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  input {   
+        width: 50%;   
+        margin: 8px 0;  
+        padding: 10px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    } 
+
+
+    </style>
+
+</html>

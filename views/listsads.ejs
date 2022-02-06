@@ -1,0 +1,284 @@
+<!Doctype html>
+
+<html>
+
+<head>
+    <title>List of Ads</title>
+</head>
+
+<body>   
+    <div class="banner">
+        <div class="navbar">
+           
+            <%if(isMember)
+            {%>
+                <ul>
+                <li><a href="/user"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="/user/update/<%= taskData._id%> ">update Profile</a></li>
+                <li><a href="/user/updatepassword/<%= taskData._id%> ">update Password</a></li>
+                
+                <li><a href="/user/uploadview">Created Ads</a></li>
+                <li><a href="/user/viewad/<%= taskData._id%>">View  Ads</a></li>
+                <li><a href="/user/logout/">logout</a></li>
+                
+            </ul>
+            <button class="btnAction" id="home" onclick="window.location.href = '/user/';">
+                Back to Home Page
+            </button>
+            <%}
+            else{%>
+            <button class="btnAction" id="home" onclick="window.location.href = '/admin/index';">
+            Back to Home Page
+            </button>    
+            <%}%>
+          
+        </div>
+      </div>
+    
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title </th>
+                <th>Description</th>
+                <th>Time Created</th>
+                <%if(isMember)
+                    {
+                        %>                  
+                <th colspan="3">Actions</th>
+                <%}
+                else{%>
+                <th>Actions</th> 
+                <%}%>                       
+            </tr>
+        </thead>
+        <tbody>
+            <% if(taskData.length> 0 )
+                {
+                taskData.forEach(function (data){
+                %>
+                <tr>
+                    <% var imgUrl = "/media/"+data._id+"."+data.image%>
+                    <td>
+                        <img src=<%=imgUrl%>>
+                    </td>
+                    <td>
+                        <%=data.name%>
+                    </td>
+                    <td>
+                        <%=data.description%>
+                    </td>
+                    <td>
+                        <% var dObj=new Date(data.createdDateTime) 
+                        var date=dObj.getDate()+"/"+(dObj.getMonth()+1)+"/"+dObj.getFullYear()+" "+ dObj.getHours()+":"+dObj.getMinutes()+":"+dObj.getSeconds() %>
+                            <%=date%>
+                    </td>                 
+                    <%if(isMember)
+                    {
+                        %>
+                        <td>                        
+                            <button class="btnAction" onclick="window.location.href = '/user/editAd/<%=data._id%>/';">
+                                Edit Ad
+                            </button>
+                        </td>
+                        <td>                        
+                            <button class="btnAction" onclick="window.location.href = '/user/reuploadImg/<%=data._id%>/';">
+                               Re-upload Image
+                            </button>
+                        </td>
+                        <td>                        
+                            <button class="btnAction" onclick="window.location.href = '/user/deleteAdbyid/<%=data._id%>/';">
+                                Delete Ad
+                            </button>
+                        </td>
+                    <%}
+                    else{%>
+
+                    
+                    <td>                        
+                        <button class="btnAction" onclick="window.location.href = '/admin/requestDetailsView/<%=data._id%>';">
+                            Request for more information
+                        </button>
+                    </td>                   
+                <%}%>
+                </tr>
+                <% }) } %>
+        </tbody>
+    </table>
+
+</body>
+<style>
+  
+    html,body{overflow-y: scroll; }
+    img{
+        width: 194px;
+        height: 125px;
+        margin-left: -57px
+    }
+    html {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+       background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+    
+    }
+    h1 {
+        background: cornsilk;
+        font-family: -webkit-pictograph;
+        text-align: center;
+        height: 50px;
+        width : 100%;
+        border: 5px solid #092756;
+    }
+    h2 {
+        background-color: crimson;
+        text-align: center;
+        color: white;
+        height: 50px;
+        margin: 0px 0px 0px 0px;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+
+    td {
+        border: 1px solid black;
+        height: 40px;
+        padding-left: 60px;
+        font-weight: 700;
+    }
+
+    th {
+        border: 1px solid black;
+        height: 40px;
+        background-color: darkgray;
+    }
+
+    tbody tr {
+        background-color: #f2f2f2;
+        height: 60px;
+    }
+    div .num {
+        display: inline-block;
+        background-color: aliceblue;
+        width: 32%;
+        height: 80px;
+        font-size: 25px;
+        font-weight: 900;
+        border: solid 8px powderblue;
+        margin-top: -23px;
+
+    }
+    p{
+        margin-left: 70px;
+    }    
+    .btnAction {
+        background-color: lightblue;
+        border: none;
+        color: white;
+        padding: 15px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin-right: 13px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+    #home {
+        padding: 10px;
+        float: left;
+        margin-top: -73px;
+        height: 41px;
+        border-radius: 35px;
+        background-color: transparent;
+        font-weight: 700;
+        width: 202px;
+        margin-left: 10px;
+        color: black;
+    }
+
+
+    
+  .banner {
+  
+   
+   
+    background-position: center;
+
+    background-size: cover;
+   /* 
+     width: 100%;
+    height: 100vh;
+    background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/images/homebg.jpeg);
+   background-repeat: no-repeat;     
+                                       /viewad/:id
+    background-attachment: fixed;
+    */
+  }
+  .navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  img.logo {
+    width: 60px;
+  
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .navbar ul li::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+  }
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+  img.logo {
+    width: 60px;
+  
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+
+</style>
+
+</html>

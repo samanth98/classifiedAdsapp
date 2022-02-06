@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <center>
+
+  
+    <div name="login-form" class="login-form">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Registration Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">    
+              <form action="/user/addinguser" method="post">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <label for="email">Email</label>
+                  <input type="email" name="email" placeholder="Email" required />
+                </div>
+
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <label for="password">Password</label>
+                  <input type="password" name="password" placeholder="Password" required />
+                </div>
+
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <label for="obile">Mobile No</label>
+                  <input type="text" name="mobile" placeholder="mobile number" required />
+                </div>
+
+                <div class="row clearfix">
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <label for="email">Email</label>
+                      <input type="text" name="fname" placeholder="First Name" />
+                    </div>
+                  </div>
+
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <label for="lname">last Name</label>
+                      <input type="text" name="lname" placeholder="Last Name" required />
+                    </div>
+                  </div>
+                </div>
+
+                    <div class="input_field select_option">
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+      
+                        <address>
+                          <label for="Address">Address</label>
+                          <input type="" name="address" placeholder="address" required />
+                        </address>
+                     
+                      </div>
+                      <div class="select_arrow"></div>
+                    </div>
+
+                    <div class="input_field select_option">
+                      <label for="Gender">Gender</label>
+                      <select  name="option" id="option">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <div class="select_arrow"></div>
+                    </div>
+                
+                <input class="button" type="submit" value="Register" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+</body>
+
+<style>
+        
+        
+  * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+  
+  html { width: 100%; height:100%; overflow:hidden; }
+  
+  body {
+    background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    text-align: left;
+    text-decoration: none;
+    height: 500px; 
+
+
+/*  
+    background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
+      background: linear-gradient(to bottom right, #33cccc 0%, #ff6600 100%);  width: 100%;
+    height:100%;
+    font-family: 'Open Sans', sans-serif;
+
+    
+       background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://static.vecteezy.com/system/resources/previews/002/860/312/non_2x/abstract-blurred-gradiant-mesh-background-in-violet-pink-blue-dark-blue-pastel-colors-vector.jpg);
+   box-shadow: 5px 10px #363305;
+   linear-gradient(to bottom, #33cccc 0%, #ff9933 100%);
+    */
+  }
+  .form{
+      border-radius: 25px;
+      display: inline-block; 
+      text-align: center;
+     
+      width: auto;
+      height: auto;
+      background:transparent;
+      border: 1px solid;
+    padding: 5px;
+    box-shadow: 10px 10px 5px #363305;
+   
+  }
+  div{
+      
+      padding: 5px;
+  }
+  a:link, a:visited {
+      font-size:large;
+      margin: 20px 10px;
+   border-radius: 25px;
+   background: transparent;
+  
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(102, 228, 140);
+  }
+
+    button {
+      font-size:large;
+width: 200px;
+padding: 15px 0;
+text-align: center;
+margin: 20px 10px;
+border-radius: 25px;
+font-weight: bold;
+border: 2px solid #009688;
+background-color: #36f436;
+color: #fff;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+}
+input {   
+  width: 50%;   
+  margin: 8px 0;  
+  padding: 10px 20px;   
+  display: inline-block;   
+  border: 2px solid green;   
+  box-sizing: border-box;   
+} 
+
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	
+	background: #f3f3f3;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+</style>
+</html>
