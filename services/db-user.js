@@ -409,7 +409,7 @@ var dbController = {
                 console.log("Error")
                 return
             }
-            res.render("listsads", { title: "List Of Ads", taskData: result,userdata:currloginUser, isMember: true })
+            res.render("listsads", { title: "List Of Ads", taskData: result,userData:currloginUser, isMember: true })
         })
     },
     

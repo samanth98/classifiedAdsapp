@@ -14,11 +14,11 @@
             {%>
                 <ul>
                 <li><a href="/user/index"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="/user/update/<%=taskData.id%> ">update Profile</a></li>
-                <li><a href="/user/updatepassword/<%=taskData.id%> ">update Password</a></li>
+                <li><a href="/user/update/<%= userData._id%> ">update Profile</a></li>
+                <li><a href="/user/updatepassword/<%= userData._id%> ">update Password</a></li>
                 
                 <li><a href="/user/uploadview">Created Ads</a></li>
-                <li><a href="/user/viewad/<%=taskData._id%>">View  Ads</a></li>
+                <li><a href="/user/viewad/<%=userData._id%>">View  Ads</a></li>
                 <li><a href="/user/logout/">logout</a></li>
                 
             </ul>
