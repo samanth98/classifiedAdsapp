@@ -7,6 +7,8 @@ module.exports = function(user){
 
     user.route("/login").get(controller.login)
 
+    user.route("/index").get(controller.index)
+
     user.route("/loginverify").post(controller.loginverify) 
 
     user.route('/logout').get(controller.logout)

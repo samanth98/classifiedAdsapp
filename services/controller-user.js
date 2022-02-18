@@ -15,6 +15,10 @@ var controller = {
             res.render("user-login", { title: "user Login Page" })
         }
     },
+
+    index: function (req, res) {
+        res.render("user-home", { title: "User Home Page", userData: currloginUser })
+    },
     login: function (req, res) {
         res.render("user-login", { title: "user Login Page" })
     },
@@ -109,7 +113,7 @@ var controller = {
         currloginUser.name = userData.fname
         console.log(userData)
         dbController.dbController.updatebook(userData)
-        await res.redirect("/user")
+        await res.redirect("/user/index")
     },
     
     updatepasswordView : function(req,res){
@@ -124,7 +128,7 @@ var controller = {
             password: req.body.password,        
         }
         dbController.dbController.update_password_book(userData)
-        await res.redirect("/user")
+        await res.redirect("/user/index")
     },
     
 
@@ -152,7 +156,7 @@ var controller = {
         dbController.insertAd(req, form, currloginUser) 
         var userData = currloginUser
    
-        await res.redirect("/user/loginverify")
+        await res.redirect("/user/index")
     },
     viewAd : async function(req, res){
         //read the id from url
@@ -181,7 +185,7 @@ var controller = {
     },
     viewallads: async function (req, res) {
         var id = req.params.id
-        await dbController.dbController.viewallads(res, id)
+        await dbController.dbController.viewallads(res, id,currloginUser)
     },
     deleteallads: function (req, res) {
         var id = req.params.id

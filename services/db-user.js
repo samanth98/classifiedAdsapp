@@ -399,7 +399,7 @@ var dbController = {
         })
     },
     
-    viewallads: function (res, id) {
+    viewallads: function (res, id,currloginUser) {
         var collection = db.collection("ad")
         var filter = {
             "userid": id
@@ -409,7 +409,7 @@ var dbController = {
                 console.log("Error")
                 return
             }
-            res.render("listsads", { title: "List Of Ads", taskData: result, isMember: true })
+            res.render("listsads", { title: "List Of Ads", taskData: result,userdata:currloginUser, isMember: true })
         })
     },
     
